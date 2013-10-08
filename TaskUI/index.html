@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+
+    <title>TaskBoard Demo App</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/taskboard.css">
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div id="page-content" class="container_12">
+        <header>
+            <a href="">TaskBoard</a>
+        </header>
+        <section role="main" class="main grid_9">
+            <section class="page page-index">
+                <h1>Welcome to the TaskBoard</h1>
+                <p>
+                    This page is a short demo for building SPA applications with
+                    <a href="http://backbonejs.org/" target="_blank">Backbone.js</a>.
+                </p>
+                <p class="warning">
+                    As such SPA application it requires <b>javascript enabled</b> in the browser.
+                </p>
+                <p>
+                    To start using the application you can:
+                    <span class="list">
+                        <span>Add/Remove/List and Edit Tasks</span>
+                        <span>Create filter and Save it</span>
+                        <span>Use saved filter on Board view</span>
+                    </span>
+                    By using the navigation links on the side.
+                </p>
+            </section>
+            <section class="page page-task template" data-template="task"></section>
+            <section class="page page-filter template" data-template="filter"></section>
+            <section class="page page-board template" data-template="board"></section>
+        </section>
+        <section role="nav" class="grid_3">
+            <nav class="nav">
+                <ul>
+                    <li>
+                        <a href="#" data-page="index" rel="nofollow">Main</a>
+                    </li>
+                    <li>
+                        <a href="#tasks" data-page="task" rel="nofollow">Administrate Tasks</a>
+                    </li>
+                    <li>
+                        <a href="#search" data-page="filter" rel="nofollow">Search/Filter</a>
+                    </li>
+                    <li>
+                        <a href="#board" data-page="board" rel="nofollow">Switch to Board</a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+        <footer class="grid_12">
+            2013 @tszebeni. Creative Commons license (CC-BY-NC-3.0).
+        </footer>
+    </div>
+    <script src="js/json2.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/underscore.js"></script>
+    <script src="js/backbone.js"></script>
+    <script src="js/handlebars.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

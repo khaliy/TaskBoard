@@ -1,0 +1,47 @@
+header {
+    padding: 20px;
+    border: 1px solid #555;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+
+nav {
+    border: 1px solid #555;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+nav ul {
+    padding: 0;
+}
+
+nav li {
+    list-style-type: none;
+}
+
+.main {
+    float: right;
+}
+
+footer {
+    color: #555;
+    font-size: 14px;
+    text-align: center;
+    border-top: 1px solid #555;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+span.list span {
+    display: block;
+    margin-left: 20px;
+}
+
+span.list span:before {
+    content: "- ";
+}
+
+.warning {
+    background-color: #ffeeee;
+    padding: 20px;
+}
