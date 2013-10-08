@@ -25,23 +25,34 @@
 
     var NavigationModel = Backbone.Model.extend({
         PAGES: ["index", "task", "filter", "board"],
+        url: "api/1/page",
         setPage: function (page) {
             if (this.PAGES.indexOf(page)!== -1) {
                 this.set("page", page);
+                this.save();
             }
+        }
+    });
+
+    var HistoryRouter = Backbone.Router.extend({
+        routes: {
+            ":page": "navigate"
+        },
+        navigate: function(page) {
+            this.trigger("change:page", {page: page});
         }
     });
 
     var NavigationView = Backbone.View.extend({
         el: "nav",
-        events: {
-            "click a": "navigate"
-        },
         initialize: function() {
             this.listenTo(this.model, "change", this.render);
+            this.historyRouter = new HistoryRouter();
+            this.historyRouter.on("change:page", $.proxy(this.navigate, this));
+            Backbone.history.start();
         },
         navigate: function(e) {
-            var page = $(e.target).data("page");
+            var page = $(e.target).data("page") || e.page;
             this.model.setPage(page);
             return this;
         },
